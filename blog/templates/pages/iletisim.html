@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %} İletisim {% endblock %}
 
 {% block content %}
-    {{ key|title }}
+
+    <form method="POST">
+        {{ form.non_field_errors }}
+        {% csrf_token %}
+        {{ form|crispy}}
+        <input type="submit" class="btn btn-danger mt-3 mb-3" value="Gönder" />
+
+    </form>
 
 {% endblock %}
