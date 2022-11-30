@@ -49,8 +49,18 @@
 
 {% endif %}
 
-{% for yorum in yorumlar %}
 
+
+{% if messages %}
+<div class="alert alert-success" role="alert">
+  {% for message in messages %}
+   {{ message }}
+  {% endfor %}
+</div>
+{% endif %}
+
+
+{% for yorum in yorumlar %}
 <div class="card">
     <div class="card-body" style="display:flex;flex-direction: row;">
         <div>
